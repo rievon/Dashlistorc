@@ -1,0 +1,451 @@
+/* PARTE 01 - Container principal do login */
+.dashlistorc-login-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    background: #f8f9fa;
+}
+
+/* PARTE 02 - Box de login */
+.dashlistorc-login-box {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    width: 100%;
+    max-width: 400px;
+    transition: all 0.3s ease;
+}
+
+.dashlistorc-login-box:hover {
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+}
+
+/* PARTE 03 - Logo do login */
+.dashlistorc-login-logo {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.dashlistorc-login-logo-image {
+    max-width: 180px;
+    max-height: 60px;
+    margin: 0 auto;
+}
+
+.dashlistorc-login-logo-text {
+    font-size: 28px;
+    font-weight: 700;
+    color: #2c5aa0;
+    letter-spacing: 1px;
+}
+
+/* PARTE 04 - Cabeçalho do login */
+.dashlistorc-login-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.dashlistorc-login-header h2 {
+    margin: 0 0 8px 0;
+    color: #2c5aa0;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.dashlistorc-login-header p {
+    margin: 0;
+    color: #6c757d;
+    font-size: 14px;
+}
+
+/* PARTE 05 - Formulário de login */
+.dashlistorc-login-form {
+    space-y: 20px;
+}
+
+/* PARTE 06 - Campos do formulário */
+.dashlistorc-login-field {
+    margin-bottom: 20px;
+}
+
+.dashlistorc-login-label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #2c5aa0;
+    font-size: 14px;
+}
+
+.dashlistorc-login-input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    background: #fff;
+    box-sizing: border-box;
+}
+
+.dashlistorc-login-input:focus {
+    outline: none;
+    border-color: #2c5aa0;
+    box-shadow: 0 0 0 3px rgba(44, 90, 160, 0.1);
+}
+
+.dashlistorc-login-input::placeholder {
+    color: #6c757d;
+    opacity: 0.7;
+}
+
+/* PARTE 07 - Lembrar de mim */
+.dashlistorc-login-remember {
+    margin-bottom: 25px;
+}
+
+.dashlistorc-remember-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #495057;
+}
+
+.dashlistorc-remember-input {
+    width: 16px;
+    height: 16px;
+    border: 2px solid #e9ecef;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dashlistorc-remember-input:checked {
+    background: #2c5aa0;
+    border-color: #2c5aa0;
+}
+
+.dashlistorc-remember-text {
+    user-select: none;
+}
+
+/* PARTE 08 - Botão de login */
+.dashlistorc-login-btn {
+    width: 100%;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.dashlistorc-login-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(44, 90, 160, 0.3);
+}
+
+.dashlistorc-login-btn:active {
+    transform: translateY(0);
+}
+
+.dashlistorc-login-btn-text {
+    position: relative;
+    z-index: 2;
+}
+
+.dashlistorc-login-loading {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid transparent;
+    border-top: 2px solid currentColor;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+/* PARTE 09 - Mensagens de erro/sucesso */
+.dashlistorc-login-messages {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 14px;
+    text-align: center;
+    display: none;
+}
+
+.dashlistorc-login-messages.success {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    display: block;
+}
+
+.dashlistorc-login-messages.error {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    display: block;
+}
+
+.dashlistorc-login-messages.warning {
+    background: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffeaa7;
+    display: block;
+}
+
+/* PARTE 10 - Rodapé do login */
+.dashlistorc-login-footer {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid #e9ecef;
+    text-align: center;
+}
+
+.dashlistorc-login-help {
+    margin: 0;
+    color: #6c757d;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+/* PARTE 11 - Usuário já logado */
+.dashlistorc-already-logged-in {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: #f8f9fa;
+}
+
+.dashlistorc-logged-in-message {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    text-align: center;
+    max-width: 500px;
+    width: 100%;
+}
+
+.dashlistorc-logged-in-message h3 {
+    margin: 0 0 15px 0;
+    color: #2c5aa0;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.dashlistorc-logged-in-message p {
+    margin: 0 0 25px 0;
+    color: #495057;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.dashlistorc-logged-in-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* PARTE 12 - Botões gerais */
+.dashlistorc-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.dashlistorc-btn-primary {
+    background: #2c5aa0;
+    color: white;
+}
+
+.dashlistorc-btn-primary:hover {
+    background: #1e4080;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(44, 90, 160, 0.3);
+}
+
+.dashlistorc-btn-secondary {
+    background: #6c757d;
+    color: white;
+}
+
+.dashlistorc-btn-secondary:hover {
+    background: #5a6268;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(108, 117, 125, 0.3);
+}
+
+/* PARTE 13 - Estados de loading */
+.dashlistorc-login-btn.loading .dashlistorc-login-btn-text {
+    opacity: 0;
+}
+
+.dashlistorc-login-btn.loading .dashlistorc-login-loading {
+    display: inline-block;
+}
+
+/* PARTE 14 - Animações */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+.dashlistorc-login-box.shake {
+    animation: shake 0.5s ease-in-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.dashlistorc-login-box {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* PARTE 15 - Responsividade */
+@media (max-width: 480px) {
+    .dashlistorc-login-container {
+        padding: 15px;
+    }
+    
+    .dashlistorc-login-box {
+        padding: 30px 25px;
+    }
+    
+    .dashlistorc-login-logo {
+        margin-bottom: 25px;
+    }
+    
+    .dashlistorc-login-logo-text {
+        font-size: 24px;
+    }
+    
+    .dashlistorc-login-header h2 {
+        font-size: 20px;
+    }
+    
+    .dashlistorc-logged-in-actions {
+        flex-direction: column;
+    }
+    
+    .dashlistorc-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* PARTE 16 - Estados de foco melhorados */
+.dashlistorc-login-input:invalid:not(:focus):not(:placeholder-shown) {
+    border-color: #dc3545;
+}
+
+.dashlistorc-login-input:valid:not(:focus):not(:placeholder-shown) {
+    border-color: #28a745;
+}
+
+/* PARTE 17 - Placeholder animations */
+.dashlistorc-login-input:focus::placeholder {
+    opacity: 0.5;
+    transform: translateX(5px);
+    transition: all 0.3s ease;
+}
+
+/* PARTE 18 - Efeito de profundidade */
+.dashlistorc-login-box::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 16px;
+    z-index: -1;
+    opacity: 0.1;
+    transition: all 0.3s ease;
+}
+
+.dashlistorc-login-box:hover::before {
+    opacity: 0.15;
+    top: -12px;
+    left: -12px;
+    right: -12px;
+    bottom: -12px;
+}
+
+/* PARTE 19 - Acessibilidade */
+@media (prefers-reduced-motion: reduce) {
+    .dashlistorc-login-box,
+    .dashlistorc-login-btn,
+    .dashlistorc-login-input {
+        transition: none;
+        animation: none;
+    }
+}
+
+/* PARTE 20 - Modo escuro (futuro) */
+@media (prefers-color-scheme: dark) {
+    .dashlistorc-login-container {
+        background: #1a1d21;
+    }
+    
+    .dashlistorc-login-box {
+        background: #2d333b;
+        color: #adbac7;
+    }
+    
+    .dashlistorc-login-input {
+        background: #22272e;
+        border-color: #444c56;
+        color: #adbac7;
+    }
+    
+    .dashlistorc-login-input:focus {
+        border-color: #2c5aa0;
+    }
+    
+    .dashlistorc-login-header h2 {
+        color: #adbac7;
+    }
+    
+    .dashlistorc-login-header p {
+        color: #768390;
+    }
+}
